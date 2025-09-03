@@ -7,7 +7,7 @@
 
 .main-container-symols {
   min-width: 300px;
-  background: pink;
+  /* background: pink; */
   max-width: 301px;
   border-radius: 14px;
 }
