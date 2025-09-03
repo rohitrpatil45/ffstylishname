@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { motion } from "motion/react";
 import "../src/app.css";
 import { symbols, emojis } from "../src/components/data/datafile";
 import BoxContainer from "./components/symbolContainer/BoxContainer";
-
+import Displayname from "./Displayname";
 import InputTag from "./components/InputTag";
 
 function App() {
+
+   const [value, setValue] = useState(""); // Centralized state
+
   return (
     <div className="app-main-container">
       <motion.h1
@@ -22,7 +26,7 @@ function App() {
         Free Fire Name Generator
       </motion.h1>
       <div className="main-flex-container">
-        <InputTag />
+        <InputTag value={value} setValue={setValue} />
       </div>
       <div>
         <h3 className="semi-app-heading">Select Symbols & Emojis</h3>
@@ -31,6 +35,7 @@ function App() {
           <BoxContainer heading={"Emojis"} elements={emojis} />
         </div>
       </div>
+<Displayname value={value} />
     </div>
   );
 }

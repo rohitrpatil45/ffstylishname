@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import '../components/input.css'
 
-function InputTag() {
-  const [value, Setvalue] = useState("");
-  const inputValue = (e) => {
-    console.log(value);
-    Setvalue("");
+function InputTag({value ,setValue}) {
+   const handleClick = () => {
+    console.log(value); // logs input value
+    setValue(""); // clear input
   };
+
   return (
     <div className="input-container">
       <input
@@ -14,15 +14,9 @@ function InputTag() {
         type="text"
         className="main-input-tag"
         value={value}
-        onChange={(e) => {
-          Setvalue(e.target.value);
-        }}
+        onChange={(e) => setValue(e.target.value)}
       />
-      <button className="enter-btn"
-        onClick={() => {
-          inputValue();
-        }}
-      >
+      <button className="enter-btn" onClick={handleClick}>
         Enter
       </button>
     </div>
