@@ -1,0 +1,34 @@
+.heading {
+  /* background: green; */
+  color: rgb(10, 14, 223);
+  text-align: center;
+  font-size: clamp(1rem, 2vw + 1rem, 3rem);
+  cursor: pointer;
+}
+.app-main-container {
+  margin: auto;
+  max-width: 1280px;
+  height: auto;
+  background: #000;
+}
+
+
+.box-containerapp{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.semi-app-heading{
+  text-align: center;
+  color: red;
+}
+
+@media only screen and (max-width: 800px){
+.box-containerapp{
+  flex-direction: column;
+ align-items: center;
+ gap: 20px;
+}
+
+}

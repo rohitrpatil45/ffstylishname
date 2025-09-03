@@ -1,0 +1,41 @@
+.main-input-tag::placeholder {
+  color: rgba(255, 0, 0, 0.966);
+}
+
+.main-input-tag {
+    padding: 0px 10px;
+    border-radius: 10px;
+  min-width: 60%;
+  height: 35px;
+}
+
+.enter-btn {
+  height: 35px;
+  width: 5em;
+  border-radius: 10px;
+  background: blue;
+font-weight: 700;
+color: white;
+
+  margin: 5px;
+}
+
+.input-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background: red;
+}
+
+@media only screen and (max-width: 800px) {
+  .main-input-tag {
+    min-width: 90%;
+    height: 35px;
+  }
+
+  .enter-btn {
+    height: 35px;
+    width: 10%;
+  }
+}
