@@ -10,6 +10,7 @@
   /* background: pink; */
   max-width: 301px;
   border-radius: 14px;
+  border: 2px solid lightgreen;
 }
 
 .boxx-container {
@@ -47,13 +48,15 @@
 
 /* background of track */
 .boxx-container::-webkit-scrollbar-track {
-  background: #111; /* dark track */
+  background: #111;
+  /* dark track */
   border-radius: 10px;
 }
 
 /* scrollbar thumb (the moving part) */
 .boxx-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #39ff14, #00ffcc); /* neon green → cyan */
+  background: linear-gradient(180deg, #39ff14, #00ffcc);
+  /* neon green → cyan */
   border-radius: 10px;
 }
 
