@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 .heading {
   /* background: green; */
   color: rgb(10, 14, 223);
   text-align: center;
   font-size: clamp(1.2rem, 2vw + 1.5rem, 3rem);
   cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+    
 }
+
 .app-main-container {
   margin: auto;
   max-width: 1280px;
@@ -14,23 +19,23 @@
 }
 
 
-.box-containerapp{
+.box-containerapp {
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
 }
 
-.semi-app-heading{
+.semi-app-heading {
   text-align: center;
   padding: 20px 0px;
   color: red;
 }
 
-@media only screen and (max-width: 800px){
-.box-containerapp{
-  flex-direction: column;
- align-items: center;
- gap: 20px;
-}
+@media only screen and (max-width: 800px) {
+  .box-containerapp {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 
 }

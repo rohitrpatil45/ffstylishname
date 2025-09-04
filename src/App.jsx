@@ -17,7 +17,7 @@ function App() {
         whileHover={{ scale: 1.1, color: "#E62727" }}
         whileTap={{ scale: 0.9 }}
         transition={{
-          color: { duration: 0.5, ease: "easeInOut" },
+          color: { duration: 1, ease: "easeInOut" },
         }}
         className="heading"
       >

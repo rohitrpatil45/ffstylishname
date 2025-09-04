@@ -12,9 +12,9 @@ function InputTag({ value, setValue }) {
     <div className="input-container">
       <motion.input
         whileFocus={{ outline: 'dashed #eeeeeeff', scale: 1.3 }}
-        whileHover={{ scale: 1.1 }}
+        // whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 300 }}
-        placeholder="Enter Name"
+        placeholder="Enter Your Name"
         type="text"
         className="main-input-tag"
         value={value}

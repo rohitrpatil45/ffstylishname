@@ -22,7 +22,8 @@ function Displayname({ value }) {
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          whileHover={{scale:1.3}}
+          transition={{ }}
           className='naming'
         >{value}</motion.h2>
         <motion.button
