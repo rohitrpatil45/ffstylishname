@@ -32,7 +32,7 @@
 
 @media only screen and (max-width: 800px) {
   .main-input-tag {
-    min-width: 90%;
+    min-width: 70%;
     height: 35px;
   }
 

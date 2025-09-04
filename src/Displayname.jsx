@@ -1,5 +1,6 @@
 import React from 'react'
 import '../src/Displaycomponent.css'
+import { motion } from 'motion/react';
 
 function Displayname({ value }) {
 
@@ -17,7 +18,12 @@ function Displayname({ value }) {
   return (
     <div className='displaynameContainer'>
       <div className="innerdiv">
-        <h2 className='naming'>{value}</h2>
+        <motion.h2
+        initial={{opacity:0 , y: 50}}
+        animate={{opacity:1 , y:0}}
+        transition={{duration:1, ease:"easeInOut"}}
+          className='naming'
+        >{value}</motion.h2>
         <button onClick={copyfunction} className='copy-btn'>Copy</button>
       </div>
     </div>

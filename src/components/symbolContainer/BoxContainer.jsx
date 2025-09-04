@@ -18,7 +18,7 @@ function BoxContainer({ heading, elements, onSelect }) {
           <motion.span
           initial={{opacity:0}}
           animate={{opacity:1}}
-          whileHover={{scale:1.5 , backgroundColor:'#3338A0'}}
+          whileHover={{scale:1.2 , backgroundColor:'#3338A0'}}
             onClick={() => onSelect(element)} key={index} className='element'>
             {element}</motion.span>
         ))}
