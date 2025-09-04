@@ -14,17 +14,23 @@ function Displayname({ value }) {
         alert("❌ Failed to copy");
       });
   };
+   
 
   return (
     <div className='displaynameContainer'>
       <div className="innerdiv">
         <motion.h2
-        initial={{opacity:0 , y: 50}}
-        animate={{opacity:1 , y:0}}
-        transition={{duration:1, ease:"easeInOut"}}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className='naming'
         >{value}</motion.h2>
-        <button onClick={copyfunction} className='copy-btn'>Copy</button>
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          whileHover={{ scale: 1.2 }}
+          onClick={copyfunction} className='copy-btn'
+        >Copy</motion.button>
       </div>
     </div>
   );

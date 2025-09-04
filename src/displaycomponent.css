@@ -19,11 +19,15 @@
 }
 
 .naming{
-    color: red;
+    /* color: red; */
     background: pink;
     padding: 6px 18px;
 }
 
 .copy-btn{
     padding: 5px 10px;
+    background: rgb(50, 50, 207);
+    border-radius: 9px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
 }
