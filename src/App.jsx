@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { motion } from "motion/react";
 import "../src/app.css";
 import { symbols, emojis } from "../src/components/data/datafile";
@@ -8,8 +7,7 @@ import Displayname from "./Displayname";
 import InputTag from "./components/InputTag";
 
 function App() {
-
-   const [value, setValue] = useState(""); // Centralized state
+  const [value, setValue] = useState(""); // Centralized state
 
   return (
     <div className="app-main-container">
@@ -25,17 +23,28 @@ function App() {
       >
         Free Fire Name Generator
       </motion.h1>
+
       <div className="main-flex-container">
         <InputTag value={value} setValue={setValue} />
       </div>
+
       <div>
         <h3 className="semi-app-heading">Select Symbols & Emojis</h3>
         <div className="box-containerapp">
-          <BoxContainer heading={"Symbols"} elements={symbols} />
-          <BoxContainer heading={"Emojis"} elements={emojis} />
+          <BoxContainer
+            heading={"Symbols"}
+            elements={symbols}
+            onSelect={(el) => setValue(value + el)}
+          />
+          <BoxContainer
+            heading={"Emojis"}
+            elements={emojis}
+            onSelect={(el) => setValue(value + el)}
+          />
         </div>
       </div>
-<Displayname value={value} />
+
+      <Displayname value={value} />
     </div>
   );
 }

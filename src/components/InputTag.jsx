@@ -16,9 +16,7 @@ function InputTag({value ,setValue}) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button className="enter-btn" onClick={handleClick}>
-        Enter
-      </button>
+     
     </div>
   );
 }
