@@ -4,17 +4,19 @@
     width: 100%;
     min-height: 50px;
     background: ghostwhite;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     /* align-items: center; */
 }
 .innerdiv{
-    background: rgb(13, 13, 17);
+    /* background: rgb(13, 13, 17); */
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 10px;
+    border-radius: 10px;
     /* align-items: center; */
 }
 
