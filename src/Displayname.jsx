@@ -1,5 +1,5 @@
 import React from 'react'
-import '../src/components/Displaycomponent.css'
+import '../src/displaycomponent.css'
 import { motion } from 'motion/react';
 
 function Displayname({ value }) {
