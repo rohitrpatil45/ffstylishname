@@ -18,6 +18,7 @@ function App() {
         whileTap={{ scale: 0.9 }}
         transition={{
           color: { duration: 1, ease: "easeInOut" },
+          scale: { duration: 0.5 }
         }}
         className="heading"
       >
@@ -29,7 +30,12 @@ function App() {
       </div>
 
       <div>
-        <h3 className="semi-app-heading">Select Symbols & Emojis</h3>
+        <motion.h3
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        whileHover={{scale:1.3 , backgroundColor: '#FFFFFF'}}
+          className="semi-app-heading"
+        >Select Symbols & Emojis</motion.h3>
         <div className="box-containerapp">
           <BoxContainer
             heading={"Symbols"}

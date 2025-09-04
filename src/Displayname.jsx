@@ -21,7 +21,7 @@ function Displayname({ value }) {
       <div className="innerdiv">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 , borderRadius:2 }}
           whileHover={{scale:1.3}}
           transition={{ }}
           className='naming'

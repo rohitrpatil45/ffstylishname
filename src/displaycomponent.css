@@ -16,19 +16,21 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-    border-radius: 10px;
+    border-radius: 19px;
+    color: white;
+    /* border-radius: 10px; */
     /* align-items: center; */
 }
 
 .naming{
     /* color: red; */
-    background: pink;
+    background: rgba(3, 0, 10, 0.808);
     padding: 6px 18px;
 }
 
 .copy-btn{
     padding: 5px 10px;
-    background: rgb(50, 50, 207);
+    background: rgb(255, 255, 255);
     border-radius: 9px;
     font-family: 'Times New Roman', Times, serif;
     font-size: large;
