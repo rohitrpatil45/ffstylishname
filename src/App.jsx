@@ -30,12 +30,14 @@ function App() {
       </div>
 
       <div>
-        <motion.h3
+       <div className="centre-main">
+         <motion.span
         initial={{opacity:0}}
         animate={{opacity:1}}
-        whileHover={{scale:1.3 , backgroundColor: '#FFFFFF'}}
+        whileHover={{scale:1.3}}
           className="semi-app-heading"
-        >Select Symbols & Emojis</motion.h3>
+        >Select Symbols & Emojis</motion.span>
+       </div>
         <div className="box-containerapp">
           <BoxContainer
             heading={"Symbols"}
