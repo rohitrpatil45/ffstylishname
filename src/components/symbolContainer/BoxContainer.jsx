@@ -22,9 +22,7 @@ function BoxContainer({ heading, elements, onSelect }) {
             onClick={() => onSelect(element)} key={index} className='element'>
             {element}</motion.span>
         ))}
-
       </div>
-
     </div>
   )
 }
