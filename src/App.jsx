@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import InputTag from "./components/InputTag";
 import BoxContainer from "./components/symbolContainer/BoxContainer";
 import Displayname from "./Displayname";
-import {decorativeSymbols,mathScienceSymbols, currencySymbols, gameSymbols ,spiritualSymbols ,asianSymbols,miscSymbols,dangerSymbols, animalSymbols} from "../src/components/data/datafile";
+import { decorativeSymbols, mathScienceSymbols, currencySymbols, gameSymbols, spiritualSymbols, asianSymbols, miscSymbols, dangerSymbols, animalSymbols } from "../src/components/data/datafile";
 
 function App() {
   const [value, setValue] = useState("");
@@ -15,7 +15,7 @@ function App() {
     const newValue = value.slice(0, pos) + el + value.slice(pos);
     setValue(newValue);
 
-    
+
     setTimeout(() => {
       if (inputRef.current) {
         inputRef.current.setSelectionRange(pos + el.length, pos + el.length);
@@ -38,9 +38,10 @@ function App() {
           value={value}
           setValue={setValue}
           inputRef={inputRef}
-          setCursorPosition={setCursorPosition} 
+          setCursorPosition={setCursorPosition}
         />
       </div>
+      <Displayname value={value} />
 
       <div>
         <div className="centre-main">
@@ -57,11 +58,10 @@ function App() {
           <BoxContainer heading={"miscSymbols"} elements={miscSymbols} onSelect={handleSymbolClick} />
           <BoxContainer heading={"spiritualSymbols"} elements={spiritualSymbols} onSelect={handleSymbolClick} />
           <BoxContainer heading={"mathScienceSymbols"} elements={mathScienceSymbols} onSelect={handleSymbolClick} />
-          <BoxContainer heading={"currencySymbols "} elements={currencySymbols } onSelect={handleSymbolClick} />
+          <BoxContainer heading={"currencySymbols "} elements={currencySymbols} onSelect={handleSymbolClick} />
         </div>
       </div>
 
-      <Displayname value={value} />
     </div>
   );
 }

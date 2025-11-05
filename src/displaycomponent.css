@@ -1,37 +1,260 @@
-.displaynameContainer{
-    text-align: center;
-    padding: 5px 3px;
-    width: 100%;
+/* Display Name Container */
+.displaynameContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.innerdiv {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 25px 30px;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow effect background */
+.innerdiv::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.innerdiv:hover::before {
+  opacity: 0.6;
+}
+
+/* Name Text Styling */
+.naming {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  border: 2px solid rgba(102, 126, 234, 0.1);
+  flex: 1;
+  text-align: center;
+  word-break: break-all;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.05),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Gradient text effect for name */
+.naming::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0.1;
+  z-index: -1;
+  border-radius: 13px;
+}
+
+/* Copy Button Styling */
+.copy-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 25px rgba(102, 126, 234, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Button hover effects */
+.copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 35px rgba(102, 126, 234, 0.4),
+    0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.copy-btn:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 4px 15px rgba(102, 126, 234, 0.3),
+    0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Button ripple effect */
+.copy-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.copy-btn:active::after {
+  width: 100px;
+  height: 100px;
+}
+
+/* Success state for copy button */
+.copy-btn.copied {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  box-shadow: 
+    0 8px 25px rgba(72, 187, 120, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty state styling */
+.naming:empty::before {
+  content: 'Your generated name will appear here...';
+  color: #a0aec0;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Copy icon (optional) */
+.copy-btn::before {
+  content: '📋';
+  font-size: 1.2rem;
+}
+
+.copy-btn.copied::before {
+  content: '✅';
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .displaynameContainer {
+    max-width: 500px;
+    padding: 0 15px;
+  }
+  
+  .innerdiv {
+    padding: 20px 25px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .naming {
+    font-size: 1.5rem;
+    padding: 12px 18px;
     min-height: 50px;
-    background: ghostwhite;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    /* align-items: center; */
-}
-.innerdiv{
-    /* background: rgb(13, 13, 17); */
-    height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 19px;
-    color: white;
-    /* border-radius: 10px; */
-    /* align-items: center; */
+  }
+  
+  .copy-btn {
+    width: 100%;
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
 }
 
-.naming{
-    /* color: red; */
-    background: rgba(3, 0, 10, 0.808);
-    padding: 6px 18px;
+@media (max-width: 480px) {
+  .displaynameContainer {
+    padding: 0 10px;
+  }
+  
+  .innerdiv {
+    padding: 15px 20px;
+    border-radius: 15px;
+  }
+  
+  .naming {
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    min-height: 45px;
+    border-radius: 12px;
+  }
+  
+  .copy-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
 }
 
-.copy-btn{
-    padding: 5px 10px;
-    background: rgb(255, 255, 255);
-    border-radius: 9px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: large;
+/* Animation for text copy feedback */
+@keyframes copyPulse {
+  0% {
+    box-shadow: 
+      0 8px 25px rgba(102, 126, 234, 0.3),
+      0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 8px 25px rgba(72, 187, 120, 0.5),
+      0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 8px 25px rgba(102, 126, 234, 0.3),
+      0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.copy-btn.animating {
+  animation: copyPulse 0.6s ease-in-out;
+}
+
+/* Special styling for gaming text */
+.naming {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .innerdiv {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.95), rgba(74, 85, 104, 0.85));
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .naming {
+    background: rgba(45, 55, 72, 0.8);
+    color: #e2e8f0;
+    border-color: rgba(102, 126, 234, 0.2);
+  }
 }
