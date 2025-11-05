@@ -7,12 +7,7 @@ function Displayname({ value }) {
   const copyfunction = () => {
     const finalText = value;   // only value, no undefined
     navigator.clipboard.writeText(finalText)
-      .then(() => {
-        alert("✅ Copied: " + finalText);
-      })
-      .catch(() => {
-        alert("❌ Failed to copy");
-      });
+      
   };
    
 

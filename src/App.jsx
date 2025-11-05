@@ -9,18 +9,18 @@ import { symbols, emojis } from "../src/components/data/datafile";
 function App() {
   const [value, setValue] = useState("");
   const [cursorPosition, setCursorPosition] = useState(0);
-  const inputRef = useRef(null); // Correct initialization
-
+  const inputRef = useRef(null);
   const handleSymbolClick = (el) => {
     const pos = cursorPosition;
     const newValue = value.slice(0, pos) + el + value.slice(pos);
     setValue(newValue);
 
-    // Set cursor after inserting symbol
+    
     setTimeout(() => {
       if (inputRef.current) {
         inputRef.current.setSelectionRange(pos + el.length, pos + el.length);
         inputRef.current.focus();
+        // console.log(inputRef.current.setSelectionRange())
       }
     }, 0);
 
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="app-main-container">
-      <motion.h1 className="heading" /* motion props here */>
+      <motion.h1 className="heading" >
         Free Fire Name Generator
       </motion.h1>
 
@@ -38,13 +38,13 @@ function App() {
           value={value}
           setValue={setValue}
           inputRef={inputRef}
-          setCursorPosition={setCursorPosition} // Pass setter for cursor
+          setCursorPosition={setCursorPosition} 
         />
       </div>
 
       <div>
         <div className="centre-main">
-          <motion.span className="semi-app-heading" /* motion props here */>
+          <motion.span className="semi-app-heading" >
             Select Symbols & Emojis
           </motion.span>
         </div>
