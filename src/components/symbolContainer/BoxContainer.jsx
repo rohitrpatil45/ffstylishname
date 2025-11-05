@@ -1,6 +1,6 @@
 import React from 'react'
 import '../symbolContainer/boxcontainer.css'
-import { symbols, emojis } from "../data/datafile";
+// import { symbols, emojis } from "../data/datafile";
 import { motion } from 'motion/react';
 
 

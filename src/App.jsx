@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import InputTag from "./components/InputTag";
 import BoxContainer from "./components/symbolContainer/BoxContainer";
 import Displayname from "./Displayname";
-import { symbols, emojis } from "../src/components/data/datafile";
+import {decorativeSymbols, gameSymbols ,spiritualSymbols ,asianSymbols,miscSymbols,dangerSymbols, animalSymbols} from "../src/components/data/datafile";
 
 function App() {
   const [value, setValue] = useState("");
@@ -49,8 +49,12 @@ function App() {
           </motion.span>
         </div>
         <div className="box-containerapp">
-          <BoxContainer heading={"Symbols"} elements={symbols} onSelect={handleSymbolClick} />
-          <BoxContainer heading={"Emojis"} elements={emojis} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"decorativeSymbols"} elements={decorativeSymbols} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"gameSymbols"} elements={gameSymbols} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"asianSymbols"} elements={asianSymbols} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"dangerSymbols"} elements={dangerSymbols} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"techSymbols"} elements={animalSymbols} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"miscSymbols"} elements={miscSymbols} onSelect={handleSymbolClick} />
         </div>
       </div>
 
