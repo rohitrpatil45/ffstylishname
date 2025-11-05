@@ -1,66 +1,249 @@
-.box-heading {
-  background: greenyellow;
-  text-align: center;
-  font-size: 2em;
-  border-radius: 14px 14px 0px 0px;
-}
-
+/* Main Container Styles */
 .main-container-symols {
-  min-width: 300px;
-  /* background: pink; */
-  max-width: 301px;
-  border-radius: 14px;
-  border: 2px solid lightgreen;
-}
-
-.boxx-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  max-height: 400px;
   display: flex;
-  flex-wrap: wrap;
-  /* justify-content: space-evenly; */
-  gap: 5px;
-  justify-content: center;
-  padding: 7px;
-  max-height: 300px;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  /* border-radius: 10px; */
+  flex-direction: column;
+  animation: fadeInUp 0.6s ease-out;
 }
 
-.element {
+.main-container-symols:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Box Heading */
+.box-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
   text-align: center;
-  cursor: pointer;
-  font-size: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* display: inline-block ; */
-  background: rgb(218, 248, 108);
-  min-height: 40px;
-  max-width: 40px;
-  min-width: 30px;
-  border-radius: 10px;
+  text-transform: capitalize;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* width of scrollbar */
+/* Box Container for Symbols */
+.boxx-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 10px;
+  overflow-y: auto;
+  flex: 1;
+  padding: 5px;
+}
+
+/* Individual Symbol Element */
+.element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.element:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-color: #667eea;
+}
+
+/* Main App Container */
+.box-containerapp {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* Beautiful Scrollbar Styling for Main Container */
+.box-containerapp::-webkit-scrollbar {
+  width: 12px;
+}
+
+.box-containerapp::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.box-containerapp::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.box-containerapp::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+.box-containerapp::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Scrollbar for Symbol Boxes */
 .boxx-container::-webkit-scrollbar {
   width: 8px;
 }
 
-/* background of track */
 .boxx-container::-webkit-scrollbar-track {
-  background: #111;
-  /* dark track */
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
 }
 
-/* scrollbar thumb (the moving part) */
 .boxx-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #39ff14, #00ffcc);
-  /* neon green → cyan */
-  border-radius: 10px;
+  background: rgba(102, 126, 234, 0.6);
+  border-radius: 4px;
 }
 
-/* on hover */
 .boxx-container::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00ffcc, #39ff14);
+  background: rgba(102, 126, 234, 0.8);
+}
+
+/* Firefox Scrollbar Support */
+.box-containerapp {
+  scrollbar-width: thin;
+  scrollbar-color: #667eea rgba(255, 255, 255, 0.1);
+}
+
+.boxx-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(102, 126, 234, 0.6) rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .box-containerapp {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .box-containerapp {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+    max-height: 85vh;
+  }
+  
+  .main-container-symols {
+    max-height: 350px;
+    padding: 15px;
+  }
+  
+  .boxx-container {
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    gap: 8px;
+  }
+  
+  .element {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .box-containerapp {
+    padding: 8px;
+    gap: 10px;
+  }
+  
+  .main-container-symols {
+    padding: 12px;
+    max-height: 300px;
+  }
+  
+  .box-heading {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  
+  .boxx-container {
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    gap: 6px;
+  }
+  
+  .element {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Empty State */
+.boxx-container:empty::after {
+  content: "No symbols available";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  color: #a0aec0;
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+
+/* Motion Animation Enhancements */
+.element {
+  transform-origin: center;
+}
+
+/* Ensure proper text rendering for symbols */
+.element {
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Print styles */
+@media print {
+  .box-containerapp {
+    background: white !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .main-container-symols {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
 }
