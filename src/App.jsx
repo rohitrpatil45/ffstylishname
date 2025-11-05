@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import InputTag from "./components/InputTag";
 import BoxContainer from "./components/symbolContainer/BoxContainer";
 import Displayname from "./Displayname";
-import {decorativeSymbols, gameSymbols ,spiritualSymbols ,asianSymbols,miscSymbols,dangerSymbols, animalSymbols} from "../src/components/data/datafile";
+import {decorativeSymbols,mathScienceSymbols, currencySymbols, gameSymbols ,spiritualSymbols ,asianSymbols,miscSymbols,dangerSymbols, animalSymbols} from "../src/components/data/datafile";
 
 function App() {
   const [value, setValue] = useState("");
@@ -55,6 +55,9 @@ function App() {
           <BoxContainer heading={"dangerSymbols"} elements={dangerSymbols} onSelect={handleSymbolClick} />
           <BoxContainer heading={"techSymbols"} elements={animalSymbols} onSelect={handleSymbolClick} />
           <BoxContainer heading={"miscSymbols"} elements={miscSymbols} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"spiritualSymbols"} elements={spiritualSymbols} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"mathScienceSymbols"} elements={mathScienceSymbols} onSelect={handleSymbolClick} />
+          <BoxContainer heading={"currencySymbols "} elements={currencySymbols } onSelect={handleSymbolClick} />
         </div>
       </div>
 
