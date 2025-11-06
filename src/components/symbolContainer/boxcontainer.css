@@ -74,10 +74,10 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
-  max-height: 80vh;
+  /* max-height: 80vh; */
   overflow-y: auto;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  /* min-height: 100vh; */
 }
 
 /* Beautiful Scrollbar Styling for Main Container */
