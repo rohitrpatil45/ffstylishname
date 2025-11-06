@@ -1,6 +1,6 @@
 /* Main Container Styles */
 .main-container-symols {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(243, 224, 224, 0.95);
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -17,6 +17,7 @@
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
+
 
 /* Box Heading */
 .box-heading {
@@ -42,6 +43,7 @@
   overflow-y: auto;
   flex: 1;
   padding: 5px;
+  max-height: 300px;
 }
 
 /* Individual Symbol Element */
@@ -144,26 +146,29 @@
 
 @media (max-width: 768px) {
   .box-containerapp {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 10px;
-    max-height: 85vh;
-  }
-
-  .main-container-symols {
-    max-height: 350px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
     padding: 15px;
   }
 
-  .boxx-container {
-    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
-    gap: 8px;
+  .main-container-symols {
+    flex: 0 0 85%; /* each card takes around 85% width of screen */
+    scroll-snap-align: center;
+    max-height: none;
   }
 
-  .element {
-    width: 35px;
-    height: 35px;
-    font-size: 1.1rem;
+  /* Optional: make scrollbar thinner */
+  .box-containerapp::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .box-containerapp::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 10px;
   }
 }
 
