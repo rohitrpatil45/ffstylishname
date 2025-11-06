@@ -149,17 +149,17 @@
     padding: 10px;
     max-height: 85vh;
   }
-  
+
   .main-container-symols {
     max-height: 350px;
     padding: 15px;
   }
-  
+
   .boxx-container {
     grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
     gap: 8px;
   }
-  
+
   .element {
     width: 35px;
     height: 35px;
@@ -172,22 +172,22 @@
     padding: 8px;
     gap: 10px;
   }
-  
+
   .main-container-symols {
     padding: 12px;
     max-height: 300px;
   }
-  
+
   .box-heading {
     font-size: 1.1rem;
     margin-bottom: 12px;
   }
-  
+
   .boxx-container {
     grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
     gap: 6px;
   }
-  
+
   .element {
     width: 30px;
     height: 30px;
@@ -201,6 +201,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -240,7 +241,7 @@
     max-height: none !important;
     overflow: visible !important;
   }
-  
+
   .main-container-symols {
     break-inside: avoid;
     box-shadow: none !important;
